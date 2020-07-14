@@ -15,6 +15,8 @@ function failure(userid:string, error:string):object {
     return { type: userConstants.LOGIN_FAIL, userid, error}
 }
 function login(userid, password) {
+    alert(`ID: ${userid}, PW: ${password}`)
+
     return dispatch =>{
         dispatch(request(userid))
     }

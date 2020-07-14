@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import '../../assets/login.css'
 import userActions from "../../actions/user.actions";
 import {connect} from "react-redux";
+
 class Login extends Component<any, any>{
     constructor(props) {
         super(props);
@@ -11,14 +12,16 @@ class Login extends Component<any, any>{
            name: '',
            submitted: false
         }
+
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
     handleChange(e){
         const {name, value} = e.target
-        this.setState({name: value})
+        this.setState({[name]: value})
     }
     handleSubmit(e){
         e.preventDefault()
-        alert(` 폼 태그 알러트 `)
         this.setState({ submitted: true})
         const {userid, password} = this.state
         if(userid && password){
@@ -26,9 +29,10 @@ class Login extends Component<any, any>{
         }
     }
 
+
     render() {
-        const { logginIn } = this.props
         const { userid, password, submitted } = this.state
+        const helpBlock = { color: "red"}
         return <div>
             <h2>Login Form</h2>
             <form name="form" onSubmit={ this.handleSubmit }>
@@ -42,7 +46,7 @@ class Login extends Component<any, any>{
                            onChange={this.handleChange}
                            />
                     { submitted && !userid &&
-                        <div className={"help-block"}>아이디는 필수 입력값입니다.</div>
+                        <div style={helpBlock}>아이디는 필수입력값입니다.</div>
                     }
                     <label htmlFor="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password"
@@ -51,7 +55,7 @@ class Login extends Component<any, any>{
                            />
                     {
                         submitted && !password &&
-                            <div className={"help-block"}> 비밀번호는 필수 입력값입니다.</div>
+                            <div style={helpBlock}> 비밀번호는 필수입력값입니다.</div>
                     }
                     <button type="submit">Login</button>
                     <label>
@@ -66,12 +70,12 @@ class Login extends Component<any, any>{
         </div>
     }
 }
-function mapState(state) {
-    const { logginIn } = state.auth
-    return { logginIn}
+function mapStateToProps(state) {
+    const { loggingIn } = state.userReducers
+    return { loggingIn}
 }
 const actionCreators = {
     login: userActions.login
 }
-const connectedLoginPage = connect(mapState, actionCreators)(Login)
+const connectedLoginPage = connect(mapStateToProps, actionCreators)(Login)
 export { connectedLoginPage as Login }
