@@ -7,10 +7,12 @@ const userActions = {
 }
 function join(userid, password, name) {
     alert(`ID: ${userid}, PW: ${password}, Name: ${name}`)
+
 }
 
 function login(userid, password) {
     alert(`ID: ${userid}, PW: ${password}`)
+    userService.loginService(userid, password)
 
     return dispatch =>{
         dispatch(request(userid))

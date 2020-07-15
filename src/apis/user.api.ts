@@ -1,5 +1,6 @@
+import '../data/initialState.json'
 const userService = {
-    login
+    loginService
 }
 function handleResponse(response) {
     return response.text()
@@ -16,17 +17,19 @@ function handleResponse(response) {
             return data
         })
 }
-function login(userid, password) {
+function loginService(userid, password) {
+    alert(` loginService 진입 `)
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({userid,password})
     }
-    return fetch(`/users/login`, requestOptions)
+    return fetch(`/initialState.json`, requestOptions)
         .then(handleResponse)
         .then(user => {
-            sessionStorage.setItem('user', JSON.stringify(user))
-            return user
+            alert(` json 읽기 성공 `)
+            localStorage.setItem('user', JSON.stringify(user))
+            
         })
 }
 export default userService
