@@ -24,12 +24,11 @@ function loginService(userid, password) {
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({userid,password})
     }
-    return fetch(`/initialState.json`, requestOptions)
+    return fetch(`https://facebook.github.io/react-native/movies.json`, requestOptions)
         .then(handleResponse)
         .then(user => {
             alert(` json 읽기 성공 `)
             localStorage.setItem('user', JSON.stringify(user))
-            
         })
 }
 export default userService
