@@ -20,15 +20,7 @@ class Login extends Component<any, any>{
         const {name, value} = e.target
         this.setState({[name]: value})
     }
-    /*
-  https://stackoverflow.com/questions/29280445/reactjs-setstate-with-a-dynamic-key-name
-  inputChangeHandler: function(event) {
-  var key = event.target.id
-  var val = event.target.value
-  var obj  = {}
-  obj[key] = val
-  this.setState(obj)
-  * */
+
     handleSubmit(e){
         e.preventDefault()
         this.setState({ submitted: true})
@@ -37,7 +29,6 @@ class Login extends Component<any, any>{
             this.props.login(userid, password)
         }
     }
-
 
     render() {
         const { userid, password, submitted } = this.state

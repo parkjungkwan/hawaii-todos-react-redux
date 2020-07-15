@@ -3,7 +3,7 @@ import {userService} from "../apis";
 import {alertActions} from "./alert.actions";
 
 const userActions = {
-    login
+    login, join
 }
 function join(userid, password, name) {
     alert(`ID: ${userid}, PW: ${password}, Name: ${name}`)
