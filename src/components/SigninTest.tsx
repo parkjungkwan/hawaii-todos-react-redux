@@ -6,7 +6,7 @@ const SignTest:React.FC = () =>{
 
     // useEffect 컴포넌트가 랜더링 될 때마다 특정 작업을 수행하도록 설정
     useEffect(()=>{
-        alert(`ID변화만 체크합니다 -->  ${userid}`)
+        alert(`[] 로 하면 처음 실행시 한번만 작동함`)
     }, [])
     const onChangeUserid = e => {
         setUserid(e.target.value)

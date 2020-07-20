@@ -9,8 +9,9 @@ import Greeting from './components/Greeting'
 import EventPractice from "./components/EventPractice";
 import SigninTest from "./components/SigninTest";
 import Signin from "./components/Signin";
+import HideTest from "./components/HideTest";
 const App = () => <div className="App">
-      <SigninTest/>
+      <HideTest/>
     </div>
 
 export default App;
