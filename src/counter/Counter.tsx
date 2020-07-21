@@ -1,6 +1,6 @@
 import React from "react";
 
-const CounterComponent = ({number, onIncrease, onDecrease}) => {
+export default function counter({number, onIncrease, onDecrease}){
 
     return (<>
         <h1>숫자: {number}</h1>
@@ -9,4 +9,4 @@ const CounterComponent = ({number, onIncrease, onDecrease}) => {
         <button onClick={onDecrease}>-1</button>
     </>)
 }
-export default CounterComponent
+

@@ -11,10 +11,9 @@ const initialState = {
 }
 const counterReducer = handleActions(
     {
-        [INCRESE]: (state, action) => ({number: state.number + 1}),
-        [DECRESE]: (state, action) => ({number: state.number - 1})
+        [INCRESE]: (state) => ({number: state.number + 1}),
+        [DECRESE]: (state) => ({number: state.number - 1})
     },
     initialState
 )
 export default counterReducer
-

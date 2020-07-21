@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Member} from './pages'
-import Counter from "./pages/Counter";
+import SimpleCounter from "./pages/SimpleCounter";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
@@ -10,10 +10,11 @@ import EventPractice from "./components/EventPractice";
 import SigninTest from "./components/SigninTest";
 import Signin from "./components/Signin";
 import HideTest from "./components/HideTest";
-import CounterContainer from "./counter/CounterContainer";
+import Counter from "./counter/CounterApp";
+import Todos from "./todos/TodosApp"
 
 const App = () => <div className="App">
-      <CounterContainer/>
+      <Todos/>
     </div>
 
 export default App;
