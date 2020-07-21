@@ -10,8 +10,10 @@ import EventPractice from "./components/EventPractice";
 import SigninTest from "./components/SigninTest";
 import Signin from "./components/Signin";
 import HideTest from "./components/HideTest";
+import CounterContainer from "./containers/CounterContainer";
+
 const App = () => <div className="App">
-      <HideTest/>
+      <CounterContainer/>
     </div>
 
 export default App;
