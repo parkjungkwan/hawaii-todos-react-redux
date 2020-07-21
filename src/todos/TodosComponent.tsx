@@ -30,6 +30,22 @@ const Todos = ({
     const onChage = e => {
         onChangeInput(e.target.value)
     }
+    return (
+        <div>
+        <div>
+            <form onSubmit={onSubmit}>
+                <input type="text" value={input} onChange={onChage}/>
+                <button type={"submit"}>등록</button>
+            </form>
+        </div>
+        <div>
+            {todos.map(todo => (<TodosItem todo={todo} key={todo.id}
+                           onToggle={onToggle}
+                           onRemove={onRemove}/>)
+            ) }
+        </div>
+        </div>
+    )
 }
 
 export default Todos
