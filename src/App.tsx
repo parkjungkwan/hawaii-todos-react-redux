@@ -10,7 +10,7 @@ import EventPractice from "./components/EventPractice";
 import SigninTest from "./components/SigninTest";
 import Signin from "./components/Signin";
 import HideTest from "./components/HideTest";
-import CounterContainer from "./containers/CounterContainer";
+import CounterContainer from "./counter/CounterContainer";
 
 const App = () => <div className="App">
       <CounterContainer/>
